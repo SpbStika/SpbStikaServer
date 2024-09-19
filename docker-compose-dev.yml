@@ -1,0 +1,15 @@
+services:
+  sing-box:
+    container_name: sing-box
+    image: itdoginfo/sing-box:test
+    build:
+      context: .
+      args:
+        RELEASE: v1.9.3
+    ports:
+      - "443:443"
+    environment:
+      SERVER: test.com
+      PUBLIC_KEY: yieryEYXzNejHPUqY7UnIHLKQOGvxAHfGkjsvTihO3w
+    volumes:
+     - ./config:/etc/sing-box/
