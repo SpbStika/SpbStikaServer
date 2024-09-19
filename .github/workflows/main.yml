@@ -1,4 +1,4 @@
-name: Build sing-box image
+name: Build Server
 
 on:
   push:
