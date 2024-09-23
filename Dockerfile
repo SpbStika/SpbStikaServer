@@ -4,7 +4,7 @@ FROM linuxserver/wireguard:latest
 
 FROM alpine:3.18.7
 
-RUN apk add --no-cache libqrencode jq wireguard coreutils bash && mkdir -p /etc/sing-box/ && mkdir -p /etc/wireguard/
+RUN apk add --no-cache libqrencode jq coreutils bash && mkdir -p /etc/sing-box/ && mkdir -p /etc/wireguard/
 
 COPY --from=sing-box /usr/local/bin/sing-box /bin/sing-box
 COPY --from=ghcr.io/tarampampam/mustpl:0.1.1 /bin/mustpl /bin/mustpl
