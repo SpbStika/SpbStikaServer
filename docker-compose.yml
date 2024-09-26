@@ -1,14 +1,14 @@
 services:
-  sing-box:
-    container_name: sing-box
-    image: itdoginfo/sing-box:v1.9.3
+  spbstikaserver:
+    container_name: spbstikaserver
+    image: spbstika/spbstikaserver
     ports:
       - "443:443"
     environment:
       PROTOCOL: shadowsocks
       PASS: "pass"
       SERVER: domain\ip
-      USERS: "User1;User2;User5;User3;"
+      USERS: ["User1";"User2";"User5";"User3";]
       #PUBLIC_KEY:
     restart: always
     # Enable for custom config (multiple accounts for example)
