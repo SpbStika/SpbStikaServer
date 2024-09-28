@@ -7,8 +7,8 @@ services:
     environment:
       PROTOCOL: shadowsocks
       PASS: "pass"
-      SERVER: domain\ip
-      USERS: ["User1";"User2";"User5";"User3";]
+      SERVER: sss.com
+      USERS: ["User1","User2","User5","User3"]
       #PUBLIC_KEY:
     restart: always
     # Enable for custom config (multiple accounts for example)
