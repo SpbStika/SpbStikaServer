@@ -9,7 +9,7 @@ chmod +x /bin/show
 #     mustpl -d '{"UUID": "${UUID:-SET_UUID}", "PRIVATE_KEY": "${PRIVATE_KEY:-SET_PRIVATE_KEY}", "SHORT_ID": "${SHORT_ID:-153bb5b1383b79fd}", "FAKE_SERVER": "${FAKE_SERVER:-www.google.com}", "PORT": "${PORT:-443}", "NAME": "${NAME:-vless}"}}' -o /etc/sing-box/config.json /opt/config-template-vless.json
 # fi
 S_Users = ""
-S_Users += "{$USERS}"
+S_Users += "${USERS}"
 
 IFS="," read -r -a Users_array <<< "${S_Users}"
 for User in "${Users_array[@]}";
