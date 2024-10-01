@@ -1,4 +1,5 @@
 #!/bin/bash
+cmd="$@"
 
 mustpl -d '{"SERVER": "${SERVER:-SET_SERVER}", "PUBLIC_KEY": "${PUBLIC_KEY:-SET_PUBLIC_KEY}", "NAME": "${NAME:-ss}"}' -o /bin/show /opt/show-template
 chmod +x /bin/show
@@ -15,4 +16,5 @@ do
  echo "${User}"
 done
 
-
+echo "run sing-box"
+exec $cmd
