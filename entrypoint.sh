@@ -3,6 +3,7 @@ cmd="$@"
 
 mustpl -d '{"SERVER": "${SERVER:-SET_SERVER}", "PUBLIC_KEY": "${PUBLIC_KEY:-SET_PUBLIC_KEY}", "NAME": "${NAME:-ss}"}' -o /bin/show /opt/show-template
 chmod +x /bin/show
+echo "show script configurate"
 
 # if [ ! -f /etc/sing-box/config.json ] && [ "${PROTOCOL}" = "shadowsocks" ]; then
 #     mustpl -d '{"METHOD": "${METHOD:-2022-blake3-aes-128-gcm}", "PASS": "${PASS:-SET_PASSWORD}", "PORT": "${PORT:-443}"}' -o /etc/sing-box/config.json /opt/config-template-shadowsocks.json
@@ -15,6 +16,6 @@ for User in "${Users_array[@]}";
 do
  echo "${User}"
 done
-
+exec show
 echo "run sing-box"
 exec $cmd
