@@ -9,6 +9,5 @@ for User in "${Users_array[@]}";
 do
  echo "${User}"
 done
-exec show
-echo "run sing-box"
+
 exec $cmd
