@@ -21,8 +21,8 @@ do
   echo " " >> wg0.conf
   echo "[PEER]" >> wg0.conf
   echo "# ${wg_users_name[$index]}" >> wg0.conf
-  echo "PublicKey = "${wg_users_puuk[$index]} >> wg0.conf
-  echo "AllowedIPs = "${wg_users_ips[$index]} >> wg0.conf
+  echo "PublicKey = ${wg_users_puuk[$index]}" >> wg0.conf
+  echo "AllowedIPs = ${wg_users_ips[$index]}" >> wg0.conf
 done
 fi
 if [ -f wg0.conf ]
